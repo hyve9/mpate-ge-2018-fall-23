@@ -1,18 +1,32 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head></head><body>
 
 
-    
-    
-    
-    
 
 
 
+
+
+
+    <!-- Issue #1: No alt text for the image.
+                   This image does not have alt text, so users with screen readers are left guessing
+                   what the image might display. Furthermore, the image file itself is non-descriptive
+                   so even tech-savvy screen reader users are left in the metaphorical dark.
+                   To resolve, it's as easy as adding an alt text key in the img tag.
     <img src="website-image.jpg" width="300" height="100"/>
+    -->
+    <img src="website-image.jpg" width="300" height="100" alt="A close-up image of a vinyl record."/>
 
     <h1>The Evolution of Music Technology</h1>
     <p>From vinyl records to streaming platforms, let&#39;s dive into the journey.</p>
 
+    <!-- Issue #2 (multiple): Navigation that doesn't actually go anywhere
+                  While the site attempts to be helpful by including navigation at the top of the page,
+                  the navigation doesn't actually go anywhere. This is unclear to users with screen readers.
+                  Furthermore, 3 of the 4 content sections do not exist. If the section is a work in progress,
+                  the section itself can still exist, perhaps with a "WIP" header next to it.
+                  To resolve, each section should be separated with a named div tag, and the navigation
+                  section should actually bring you to the named div.
+                  Note: I'm removing the first two links since they don't actually link to anything.
     <a rel="noopener" href="#">Read more about the history</a>
     <a rel="noopener" href="#">Discover latest trends</a>
 
@@ -23,22 +37,89 @@
         <li><a rel="noopener" href="#">MP3 and Digital Downloads</a></li>
         <li><a rel="noopener" href="#">Streaming Platforms</a></li>
     </ul>
+    -->
+  <h3>Contents</h3>
+  <ul>
+      <li><a rel="noopener" href="#vinyl-records">Vinyl Records</a></li>
+      <li><a rel="noopener" href="#cassettes-cds">Cassette Tapes and CDs</a></li>
+      <li><a rel="noopener" href="#mp3-digital">MP3 and Digital Downloads</a></li>
+      <li><a rel="noopener" href="#streaming-platforms">Streaming Platforms</a></li>
+  </ul>
 
+  <div id="vinyl-records">
     <h1>Vinyl Records</h1>
-    <p>Vinyl records, often simply called &quot;vinyl&quot;, represent a significant era in the history of music recording and playback. Emerging in the early 20th century, these flat discs primarily made of polyvinyl chloride became the mainstay for music enthusiasts, artists, and DJs around the world. With their unique grooves, which are literally the physical imprint of sound waves, vinyl provided listeners an analog warmth and depth of sound that many argue hasn&#39;t been replicated by digital formats. The tactile experience of placing a needle onto a spinning disc, combined with the large, artistic album covers, made listening to vinyl an immersive experience.</p>
+      <body>
+        <p>Vinyl records, often simply called &quot;vinyl&quot;, represent a significant era in the history of music recording and playback. Emerging in the early 20th century, these flat discs primarily made of polyvinyl chloride became the mainstay for music enthusiasts, artists, and DJs around the world. With their unique grooves, which are literally the physical imprint of sound waves, vinyl provided listeners an analog warmth and depth of sound that many argue hasn&#39;t been replicated by digital formats. The tactile experience of placing a needle onto a spinning disc, combined with the large, artistic album covers, made listening to vinyl an immersive experience.</p>
 
-	<p>In recent years, vinyl has experienced a surprising resurgence. While the digital age has made music more accessible than ever, a growing number of music enthusiasts are returning to vinyl for its nostalgic appeal and the distinct audio quality it offers. For these aficionados, the act of collecting and playing records provides a tangible connection to the music, allowing them to engage with their favorite tunes in a manner that digital streaming can&#39;t capture. The renewed interest in vinyl speaks to its enduring charm and the timeless allure of analog sound in a rapidly evolving digital world.</p>
-    <p>The vintage charm of vinyl records is irreplaceable...</p>
+    	  <p>In recent years, vinyl has experienced a surprising resurgence. While the digital age has made music more accessible than ever, a growing number of music enthusiasts are returning to vinyl for its nostalgic appeal and the distinct audio quality it offers. For these aficionados, the act of collecting and playing records provides a tangible connection to the music, allowing them to engage with their favorite tunes in a manner that digital streaming can&#39;t capture. The renewed interest in vinyl speaks to its enduring charm and the timeless allure of analog sound in a rapidly evolving digital world.</p>
+        <p>The vintage charm of vinyl records is irreplaceable...</p>
+      </body>
+
+    <!-- Issue #5: Audio
+                  There is no description of the audio for deaf or hard of hearing users.
+                  While there is a filename that says "vinyl-sound.mp3", this is not sufficient
+                  description. To resolve, there should be a heading or label that clearly describes
+                  what content is going to play. For good measure, we can ensure that the audio
+                  starts muted and autoplay is disabled explicitly.
+
     <audio controls="controls">
         <source src="vinyl-sound.mp3" type="audio/mp3">
     </source></audio>
+    -->
+  <div id="vinyl-example">
+    <h5>Click the sample below to hear an example of what vinyl sounds like.</h5>
+    <h6>Note: If you're listening with a computer, this defeats the purpose! Computers by design cannot recreate the true sound of vinyl. This is an approximation.</h6>
+    <audio controls="controls" autoplay=false loop=false muted=true>
+        <source src="vinyl-sound.mp3" type="audio/mp3">
+    </source></audio>
+  </div>
 
-    
+  <div id="cassettes-cds">
+    <h1>Cassette Tapes and CDs</h1>
+      <body>
+        <p>!--- This section is a work in progress. Please check back later! ---!</p>
+      </body>
+  </div>
+
+  <div id="mp3-digital">
+    <h1>MP3 and Digital Downloads</h1>
+      <body>
+        <p>!--- This section is a work in progress. Please check back later! ---!</p>
+      </body>
+  </div>
+
+  <div id="streaming-platforms">
+    <h1>Streaming Platforms</h1>
+      <body>
+        <p>!--- This section is a work in progress. Please check back later! ---!</p>
+      </body>
+  </div>
+
+
+    <!-- Issue #3: Non-functioning search function
+                  It is not clear what purpose this search section serves. Is it a google search?
+                  Site search? This is just text with no functionality. This should either be
+                  implemented or removed.
+                  Since this is not a large website and a search bar feels unnecessary, I will
+                  remove this entirely.
     Search
+    -->
 
+    <!-- Issue #4: Unclear newsletter subscription functionality
+                  This section has a "Join Our Newsletter" header and text that says "subscribe",
+                  but neither of these have any function or onclick event. There should likely
+                  be a button titled "Subscribe" under the text "Join our Newsletter" with some
+                  event tied to it. I have added a button (but disabled it, as I did not implement
+                  any newsletter subscribing functionality.)
     <h1>Join Our Newsletter</h1>
-    
+
     Subscribe
+    -->
+  <div id="newsletter">
+    <h1>Join Our Newsletter</h1>
+
+    <button name="subscribe-to-newsletter" labels="subscribe, newsletter" onclick="alert('Newsletter is not set up yet. Check back soon!')" innerText="Subscribe to our Newsletter" />
+  </div>
 
 
 
