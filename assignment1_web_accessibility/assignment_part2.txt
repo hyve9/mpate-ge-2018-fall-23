@@ -1,0 +1,68 @@
+Website under review: newgrounds.com
+
+Overview:
+
+Newgrounds is a site for people to upload their own cartoons and animations. It
+also allows the upload of user generated games and audio. Started in 1995, Newgrounds
+has grown into one of the largest animation and entertainment websites on the internet.
+Newgrounds has improved significantly over the years, but there are still areas of
+improvement to be made.
+
+Improvement 1: Availability of video content.
+In the early days of flash animation, most people developed animations with Macromedia
+Flash, and produced Shockwave files that could be played by installing a Flash extension
+in the browser. As Adobe sunsetted this Flash support in 2020, most if not all of the
+videos and animations created and archived on Newgrounds no longer play natively.
+Newgrounds has done a very good job at resolving this with the development of Ruffle,
+an in-browser Flash emulator written in Rust. However, many projects also supported
+ActionScript 3.0, which, as of writing, still requires users to download Newgrounds own
+player to support. This is an issue for users with screen readers, as the content
+cannot be played natively and poses a challenge to install.
+
+There is little that can be done here to improve the media itself. The easiest resolution is to flag the
+older content with a heading or label indicating that the content is old and that
+it requires manual work to play, so people using assistive technology can make their
+own decisions on whether or not to go down that rabbit hole.
+
+Improvement 2: Playback of video content
+
+Furthermore, as there were no standards in the beginning as to how the video content
+was packaged, most people implemented the loading screen, playback controls, and volume
+controls manually. This means that these controls were embedded into the content,
+and the user did not have control over whether something autoplayed, looped, was
+muted etc. (Some of this was used for comedic effect, for example a frustratingly
+unplayable video). This older content is still enabled through Ruffle. This goes
+against WCAG guidelines for accessible media, as people using accessibility features
+do not have a common interface to control playback.
+
+In order to resolve this, the emulation software can and should provide a playback
+wrapper that overrides the builtin playback controls.
+
+Improvement 3: Mandatory video and audio descriptions
+
+Being a largely creative platform, the titles and descriptions of the videos and
+games on Newgrounds are often also used for additional creative or comedic effect,
+rather than explicitly describing the content. This makes it difficult for people
+using text-to-speech or screen readers to accurately understand what type of content
+they are perceiving.
+
+An easy solution that does not infringe upon the creator's creativity is to provide
+an accessibility description box below the main description box that accurately
+describes the content, while still allowing for creative expression in the main
+descriptions
+
+Improvement 4: Infinitely scrolling content/content display
+
+Newgrounds is largely a browser-based website, meaning it is not often accessed on
+mobile. This means that there is little resizing done for mobile devices. As a consequence
+users with accessibility software that resizes the browser content will be frustrated by
+the somewhat rigid nature of the webpage display. Additionally, when scrolling through
+the games or movies sections of the website, reaching the bottom of the page prompts
+some inline javascript to fetch more movies and games, effectively making the page
+an infinitely scrolling feed. This prevents users who need to use navigation from
+reaching the site map at the bottom.
+
+To resolve this, style sheets could be applied to make the resizing of the webpage
+more flexible for users with differently sized devices. Additionally, the inline
+infinite scrolling feed should be a toggle-able option, with the default set to off,
+or better, the games and movies should be paginated rather than infinitely scrolling.
