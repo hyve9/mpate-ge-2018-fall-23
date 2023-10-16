@@ -1,0 +1,15 @@
+1. Describe your approach to creating captions for the video. Did you focus on specific aspects, like timing, conciseness, or the inclusion of non-speech sounds?
+
+I essentially made sure that the main parts of the speech were there, and focused less on repeated words, ums, and breaths. I wanted the subtitle changes to not be too early to avoid "giving away" any of the content.
+
+2. What challenges did you encounter during the captioning process? Consider issues related to timing, content representation, or the subtitling software.
+
+Getting the subtitles not to overlap with each other, and shifting the titles forwards or backwards (ensuring that subsequent and antecedent titles also shift by the same amount.
+
+3. How did you overcome the challenges you faced? Share the strategies or methods you employed to address issues and improve your captions.
+
+In general, there wasn't much "overcoming", I just had to spend extra time hand-editing the timestamps and subtitle location to ensure accuracy and avoid overlaps. I'm sure that there are
+ways to do this automatically that are built into the software, but as I am not that familiar with the software I simply did a lot of it by hand. 
+One thing that helped was typing everything out before hand, and then adjusting the timestamps later. Although this was annoying to shift individual titles, I didn't have to stop
+and replay the clip multiple times to get the gist of what was being said.
+
